@@ -1,10 +1,9 @@
 const userSvc = require('../user/user.service')
 class AuthController{
-    registerUser = async (req, res) => {
-        const data= req.body;
+    registerUser = async (req, res) => { 
+        const data = await userSvc.transformUserData(req);
         console.log(data);
         const user = await userSvc.userRegister(data);
-        
         res.json({
             data: user,
             message: "User Registered Successfully",
