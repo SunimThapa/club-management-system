@@ -1,17 +1,13 @@
+require("dotenv").config();
 const express = require("express");
-const authRouter = require("./modules/auth/auth.router")
-const db = require("./config/database");
+const router = require("./config/router.config")
+const errorHandler = require("./middlewares/error.middleware")
 const app = express();
 app.use(express.json());
-app.use("/api/v1", authRouter);
+app.use("/api/v1/", router);
+app.use(errorHandler);
 
 app.get("/home", async(req, res) => {
-  
-    try{ const [rows] = await db.query("SELECT * FROM users");
-        console.log(rows);
-    }catch(err){
-        console.error(err);
-    }
     res.send("Club Management API Running");
 });
 
