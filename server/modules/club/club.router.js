@@ -2,7 +2,7 @@ const clubRouter = require("express").Router();
 const { isSuperAdmin, checkLogin, isMember } = require("../../middlewares/auth.middleware");
 const clubCtrl = require('./club.controller');
 
-clubRouter.post('/register', clubCtrl.registerClub);
+clubRouter.post('/register', checkLogin(), isSuperAdmin, clubCtrl.registerClub);
 clubRouter.get('/', clubCtrl.getAllClubs);
 clubRouter.get('/:id', clubCtrl.getSingleClub);
 clubRouter.patch('/:id', checkLogin(), isSuperAdmin, clubCtrl.updateClub);

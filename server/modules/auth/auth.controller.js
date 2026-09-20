@@ -45,7 +45,7 @@ class AuthController {
       const accessToken = jwt.sign({
         sub: userInfo.user_id,
         type: "Bearer"
-      }, AppConfig.jwtSecret, {expiresIn: "3hr"})
+      }, AppConfig.jwtSecret, {expiresIn: "24hr"})
       res.json({
         data: {
           accessToken : accessToken
