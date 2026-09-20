@@ -3,6 +3,10 @@ const express = require("express");
 const router = require("./config/router.config")
 const errorHandler = require("./middlewares/error.middleware")
 const app = express();
+const cors = require("cors")
+app.use(cors({
+    origin: "http://localhost:5173"
+}));
 app.use(express.json());
 app.use("/api/v1/", router);
 app.use(errorHandler);
