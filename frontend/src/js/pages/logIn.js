@@ -1,14 +1,13 @@
 import { logIn } from "../api/auth";
 import { showToast } from "../components/toast";
 
-const passwordInput = document.getElementById('password');
-const togglePassword = document.getElementById('togglePassword');
-
-togglePassword.addEventListener('click', function () {
-    
-    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', type);
-    this.textContent = type === 'password' ? '👁' : '🙈'; 
+document.addEventListener('DOMContentLoaded', () => {
+    const flash = localStorage.getItem('flashMessage');
+    if (flash) {
+        const { text, type } = JSON.parse(flash);
+        showToast(text, type);
+        localStorage.removeItem('flashMessage');
+    }
 });
 const logInForm = document.getElementById("logInForm");
 
