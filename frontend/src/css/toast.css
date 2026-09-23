@@ -46,7 +46,7 @@
     border-color: #2f4a3a;
 }
 .toast-success::before {
-    background: #4ade80;
+    background: #36ee7a;
     box-shadow: 0 0 8px #4ade8080;
 }
 
@@ -54,7 +54,7 @@
     border-color: #4a2f3a;
 }
 .toast-error::before {
-    background: #f87171;
+    background: #fd3f3f;
     box-shadow: 0 0 8px #f8717180;
 }
 

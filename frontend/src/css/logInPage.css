@@ -1,8 +1,9 @@
+@import url("toast.css");
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
   
   body {
     min-height: 100vh;
@@ -18,7 +19,7 @@
     justify-content: space-between;
     gap: 7%;
     padding: 42px 8.6%;
-    background: radial-gradient(ellipse at 9% 12%, #1c1037 0, #0c0b17 31%, #08090e 58%);
+    background: #090a0f;
   }
   
   .intro {
@@ -154,17 +155,19 @@
   }
   
   .field-icon,
-  .eye {
+  .eye
+   {
     color: #777d91;
-    font-size: 18px;
+    font-size: 20px;
   }
   .lock{
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
-  .eye-img{
-    width: 18px;
-    height: 18px;
+  .eye-img,
+  .email-icon{
+    width: 20px;
+    height: 20px;
   }
   .input-wrap input {
     min-width: 0;
