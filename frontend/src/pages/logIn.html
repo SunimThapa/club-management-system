@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClubHub - Sign In</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/logInPage.css">
 </head>
 <body>
   <main class="page">
@@ -32,9 +32,9 @@
       <form id="logInForm">
         <label for="email">Email</label>
         <div class="input-wrap">
-          <span class="field-icon">✉</span>
-          <input id="email" type="email" placeholder="Enter your email">
-        </div>
+          <span class="field-icon"><img src="../../public/images/mail.png" alt="email" class="email-icon"></span>
+          <input type="email" id="email" placeholder="you@gmail.com">
+      </div>
 
         <!-- <div class="password-label">
           <label for="password">Password</label>
@@ -55,5 +55,6 @@
     </section>
   </main>
   <script type="module" src="../js/pages/logIn.js"></script>
+  <script type="module" src="../js/components/passwordViewToggle.js"></script>
 </body>
 </html>

@@ -1,30 +1,137 @@
-<link rel="stylesheet" href="../css/style.css">
-<form id="registerForm">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account - ClubHub</title>
+    <link rel="stylesheet" href="../css/signUpPage.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+</head>
+<body>
 
-    <input
-        type="text"
-        id="name"
-        placeholder="Full Name"
-        required
-    >
+    <main class="container">
 
-    <input
-        type="email"
-        id="email"
-        placeholder="Email"
-        required
-    >
+        <section class="left">
+            <div class="brand">
+                <div class="logo"><img src="../../public/images/logo.jpg" alt="logo" class="logo"></div>
+                <div>
+                    <h3>Club<span>Hub</span></h3>
+                    <small>CAMPUS COMMUNITY</small>
+                </div>
+            </div>
 
-    <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        required
-    >
-    
-    <button type="submit">
-        Register
-    </button>
+            <div class="intro">
+                <p class="tag">JOIN YOUR CAMPUS</p>
+                <h1>Join.<br><span>Belong.</span><br>Lead.</h1>
+                <p class="description">
+                    Create a account to find clubs you care about, apply to events,
+                    and keep up with everything happening on your college.
+                </p>
+            </div>
 
-</form>
-<script type="module" src="../../src/js/pages/signUp.js"></script>
+            <!-- <div class="features">
+                <div class="feature">
+                    <div class="feature-icon"><img src="images/search.png" alt="search" class="icon"></div>
+                    <div>
+                        <h4>Find your clubs</h4>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon"><img src="images/event.png" alt="calendar" class="icon"></div>
+                    <div>
+                        <h4>Never miss an event</h4>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon"><img src="images/maccount.png" alt="club" class="icon"></div>
+                    <div>
+                        <h4>Run your own club</h4>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+
+        <section class="right">
+            <div class="signup-card">
+
+                <div class="card-icon"><img src="../../public/images/addacc.png" alt="addacc" class="aicon"></div>
+                <h2>Create your account</h2>
+                <p class="subtitle">Use your college email to get started</p>
+
+                <form id="signUp-form">
+                    <label for="fullname">Full name</label>
+                    <div class="input-box">
+                        <span class="icon"><img src="../../public/images/acc.png" alt="account" class="acicon"></span>
+                        <input type="text" id="fullname" placeholder="Your full name" required>
+                    </div>
+
+                    <label for="email">College email</label>
+                    <div class="input-box">
+                        <span class="icon"><img src="../../public/images/mail.png" alt="email" class="acicon"></span>
+                        <input type="email" id="email" placeholder="you@college.edu" required>
+                    </div>
+
+                    <!-- <div class="form-row">
+                        <div>
+                            <label for="department">Department</label>
+                            <div class="input-box">
+                                <input type="text" id="department" placeholder="e.g. Computer Science">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="year">Year</label>
+                            <div class="input-box">
+                                <select id="year">
+                                    <option value="">Select year</option>
+                                    <option>First Year</option>
+                                    <option>Second Year</option>
+                                    <option>Third Year</option>
+                                    <option>Fourth Year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <label for="password">Password</label>
+                    <div class="input-box">
+                        <span class="icon"><img src="../../public/images/lock.png" alt="lock" class="acicon"></span>
+                        <input type="password" id="password" placeholder="Create a password" required>
+                        <span class="eye" id="togglePassword"><img src="../../public/images/eye.png" alt="eye" class="eye-icon"></span>
+                    </div>
+                    
+                    <small class="hint">Use at least 8 characters with letters and numbers.</small>
+
+                    <!-- <label for="confirm">Confirm password</label>
+                    <div class="input-box">
+                        <span class="icon"><img src="images/lock.png" alt="lock" class="acicon"></span>
+                        <input type="password" id="confirm" placeholder="Re-enter your password">
+                        <span class="eye-icon"></span>
+                    </div> -->
+
+                    <button type="submit" id="signUp-btn">Create account <span>&rarr;</span></button>
+                </form>
+
+                <div class="or">
+                    <span></span>
+                    <small>OR</small>
+                    <span></span>
+                </div>
+
+                <p class="signin">Already have an account? <a href="logIn.html">Sign in</a></p>
+
+                <!-- <p class="secure">Your information is securely encrypted</p> -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>&copy; 2026 ClubHub &middot; College Club Management System</footer>
+
+    <script type="module" src="../js/pages/signUp.js"></script>
+    <script type="module" src="../js/components/passwordViewToggle.js"></script>
+
+</body>
+</html>
