@@ -11,13 +11,13 @@ export function registerForEvent(event_id){
 }
 
 export function getMyRegistrations(){
-    return apiRequest("/registrations/my", { method: "GET" });
+    return apiRequest("/event_registration/myRegistration", { method: "GET" });
 }
 
 export function getEventRegistrations(event_id){
-    return apiRequest(`/registrations/event/${event_id}`, { method: "GET" });
+    return apiRequest(`/event_registrations/event/${event_id}`, { method: "GET" });
 }
 
 export function cancelRegistration(id){
-    return apiRequest(`/registrations/${id}`, { method: "DELETE" });
+    return apiRequest(`/event_registrations/${id}`, { method: "DELETE" });
 }

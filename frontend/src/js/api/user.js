@@ -11,12 +11,12 @@ export function assignClubAdmin(userId, assignData){
 }
 
 export function getMyProfile(){
-    return apiRequest("/users/me", { method: "GET" });
+    return apiRequest("/user/me", { method: "GET" });
 }
 
 export function updateMyProfile(userData){
     return apiRequest(
-        "/users/me",
+        "/user/me",
         {
             method: "PATCH",
             body: JSON.stringify(userData)
@@ -25,13 +25,13 @@ export function updateMyProfile(userData){
 }
 
 export function getAllUsers(){
-    return apiRequest("/users", { method: "GET" });
+    return apiRequest("/user", { method: "GET" });
 }
 
 export function getSingleUser(id){
-    return apiRequest(`/users/${id}`, { method: "GET" });
+    return apiRequest(`/user/${id}`, { method: "GET" });
 }
 
 export function deleteUser(id){
-    return apiRequest(`/users/${id}`, { method: "DELETE" });
+    return apiRequest(`/user/${id}`, { method: "DELETE" });
 }

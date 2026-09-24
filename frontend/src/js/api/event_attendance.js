@@ -35,5 +35,5 @@ export function getEventAttendance(event_id){
 }
 
 export function getMyAttendance(){
-    return apiRequest("/attendance/my", { method: "GET" });
+    return apiRequest("/event-attendance/my", { method: "GET" });
 }

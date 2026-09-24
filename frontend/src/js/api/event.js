@@ -11,7 +11,7 @@ export function createEvent(eventData){
 }
 
 export function getAllEvents(){
-    return apiRequest("/events", { method: "GET" });
+    return apiRequest("/event/allEvents", { method: "GET" });
 }
 
 export function getSingleEvent(id){
