@@ -1,7 +1,151 @@
-<link rel="stylesheet" href="../css/style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClubHub - Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="icon" type="image/x-icon" href="../../public/images/logo.png">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="../../public/images/logo.png" class="logo" alt="logo">
+      <div class="logo-text">
+        <span class="brand">ClubHub</span>
+        <span class="subtext">COLLEGE COMMUNITY</span>
+      </div>
+    </div>
 
+    <nav class="nav-links">
+      <a href="#" class="nav-item active">Home</a>
+      <a href="#" class="nav-item">Clubs</a>
+      <a href="#" class="nav-item">Events</a>
+      <a href="#" class="nav-item">Announcements</a>
+    </nav>
+  </header>
 
-<form>
-    <button type="submit">djflhdfjk</button>
-</form>
+  <div class="app-layout">
+    <aside class="sidebar">
+        <ul class="sidebar-menu" id="sidebarMenu">
+          <!-- rendered by dashboard.js -->
+        </ul>
+      
+        <div class="sidebar-footer">
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </aside>
+
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1>Welcome back, Alex!</h1>
+          <p>Here is what's happening across your college community today.</p>
+        </div>
+        <button id="create-event-btn" class="create-btn" hidden>+ Create New Event</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon purple"><img src="../../public/images/layer.png" alt="layer" class="aicon"></div>
+          <div>
+            <div class="stat-number" id="stat1Number">–</div>
+            <div class="stat-label" id="stat1Label">Loading...</div>
+          </div>
+        </div>
+      
+        <div class="stat-card">
+          <div class="stat-icon green"><img src="../../public/images/ev.png" alt="event" class="aicon"></div>
+          <div>
+            <div class="stat-number" id="stat2Number">–</div>
+            <div class="stat-label" id="stat2Label">Loading...</div>
+          </div>
+        </div>
+      
+        <div class="stat-card">
+          <div class="stat-icon amber"><img src="../../public/images/clipboard.png" alt="apply" class="aicon"></div>
+          <div>
+            <div class="stat-number" id="stat3Number">–</div>
+            <div class="stat-label" id="stat3Label">Loading...</div>
+          </div>
+        </div>
+      
+        <div class="stat-card">
+          <div class="stat-icon blue"><img src="../../public/images/history.png" alt="approve" class="aicon"></div>
+          <div>
+            <div class="stat-number" id="stat4Number">–</div>
+            <div class="stat-label" id="stat4Label">Loading...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-columns">
+        <section class="card">
+          <div class="section-header">
+            <h2>Recent Announcements</h2>
+          </div>
+          <div class="announcement-item">
+            <div class="announcement-header">
+              <div class="club-info">
+                <div class="club-avatar" id="club1Avatar">CS</div>
+                <div>
+                  <div class="club-name" id="club1Name">Computer Science Society</div>
+                  <div class="post-time" id="post1Time">2 hours ago</div>
+                </div>
+              </div>
+            </div>
+            <p class="announcement-text" id="announcement1Text">
+              Hackathon 2026 registrations are officially open! Form teams of up to 4 members. Early bird passes available until Friday.
+            </p>
+          </div>
+
+          <div class="announcement-item">
+            <div class="announcement-header">
+              <div class="club-info">
+                <div class="club-avatar" id="club2Avatar">RC</div>
+                <div>
+                  <div class="club-name" id="club2Name">Robotics Club</div>
+                  <div class="post-time" id="post3Time">Yesterday</div>
+                </div>
+              </div>
+            </div>
+            <p class="announcement-text" id="announcement2Text">
+              Weekly lab session postponed to Thursday at 5 PM due to campus maintenance in Block B.
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-header">
+            <h2>Upcoming Events</h2>
+          </div>
+          <div class="event-item">
+            <div class="date-box">
+              <span class="date-day" id="date1Day">28</span>
+              <span class="date-month" id="date1Month">SEP</span>
+            </div>
+            <div class="event-details">
+              <div class="event-title" id="event1Title">AI & Future Tech Symposium</div>
+              <div class="event-location" id="event1Location">Main Auditorium</div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="date-box">
+              <span class="date-day" id="date2Day">02</span>
+              <span class="date-month" id="date2Month">OCT</span>
+            </div>
+            <div class="event-details">
+              <div class="event-title" id="event2Title">Annual Cultural Fest Prep</div>
+              <div class="event-location" id="event2Location">Student Center</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
 <script type="module" src="../js/pages/dashboard.js"></script>
+<script type="module" src="../js/components/logout.js">
+</script>
+</html>
