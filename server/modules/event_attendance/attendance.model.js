@@ -4,7 +4,7 @@ class AttendanceModel {
 
     async create(data){
         const query = `
-        INSERT INTO attendance (event_id, user_id, status)
+        INSERT INTO event_attendance (event_id, user_id, status)
         VALUES (?, ?, ?)
         `
         const [result] = await db.execute(query, [data.event_id, data.user_id, data.status])
@@ -12,7 +12,7 @@ class AttendanceModel {
     }
 
     async findById(attendance_id){
-        const query = `SELECT * FROM attendance WHERE attendance_id = ?`
+        const query = `SELECT * FROM event_attendance WHERE attendance_id = ?`
         const [rows] = await db.execute(query, [attendance_id])
         return rows[0] || null;
     }
@@ -21,7 +21,7 @@ class AttendanceModel {
         const query = `
         SELECT a.attendance_id, a.event_id, a.user_id, a.status, a.marked_at,
                u.name, u.email
-        FROM attendance a
+        FROM event_attendance a
         JOIN users u ON u.user_id = a.user_id
         WHERE a.event_id = ?
         `
@@ -33,7 +33,7 @@ class AttendanceModel {
         const query = `
         SELECT a.attendance_id, a.event_id, a.user_id, a.status, a.marked_at,
                e.title, e.event_date, e.venue
-        FROM attendance a
+        FROM event_attendance a
         JOIN events e ON e.event_id = a.event_id
         WHERE a.user_id = ?
         ORDER BY a.marked_at DESC
@@ -44,7 +44,7 @@ class AttendanceModel {
 
     async updateStatus(attendance_id, status){
         const query = `
-        UPDATE attendance
+        UPDATE event_attendance
         SET status = ?, marked_at = NOW()
         WHERE attendance_id = ?
         `
