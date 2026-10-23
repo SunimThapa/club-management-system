@@ -43,7 +43,7 @@ class RegistrationModel {
     }
 
     async findByUserAndEvent(user_id, event_id){
-        const query = `SELECT * FROM registrations WHERE user_id = ? AND event_id = ?`
+        const query = `SELECT * FROM event_registrations WHERE user_id = ? AND event_id = ?`
         const [rows] = await db.execute(query, [user_id, event_id])
         return rows[0] || null;
     }
