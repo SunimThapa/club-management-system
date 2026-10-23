@@ -18,6 +18,7 @@ class AnnouncementController{
     async getAllAnnouncements(req, res,next){
         try{
             const data = await announcementSvc.getAllAnnouncements();
+            console.log(new Date().toISOString());
             res.json({
                 data: data,
                 message: "Announcements Fetched Successfully",
