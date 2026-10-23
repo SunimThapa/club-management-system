@@ -2,7 +2,7 @@ import { apiRequest } from "./api.js";
 
 export function markAttendance(event_id, user_id, status){
     return apiRequest(
-        "/attendance",
+        "/event-attendance",
         {
             method: "POST",
             body: JSON.stringify({ event_id, user_id, status })
@@ -12,7 +12,7 @@ export function markAttendance(event_id, user_id, status){
 
 export function bulkMarkAttendance(event_id, attendees){
     return apiRequest(
-        "/attendance/bulk",
+        "/event-attendance/bulk",
         {
             method: "POST",
             body: JSON.stringify({ event_id, attendees })
@@ -22,7 +22,7 @@ export function bulkMarkAttendance(event_id, attendees){
 
 export function updateAttendance(id, status){
     return apiRequest(
-        `/attendance/${id}`,
+        `/event-attendance/${id}`,
         {
             method: "PATCH",
             body: JSON.stringify({ status })
@@ -31,7 +31,7 @@ export function updateAttendance(id, status){
 }
 
 export function getEventAttendance(event_id){
-    return apiRequest(`/attendance/event/${event_id}`, { method: "GET" });
+    return apiRequest(`/event-attendance/event/${event_id}`, { method: "GET" });
 }
 
 export function getMyAttendance(){

@@ -20,7 +20,7 @@ export async function apiRequest(endpoint, options = {}) {
         showToast("Your session has expired. Please log in again.", "error");
 
         setTimeout(() => {
-            window.location.href = '/login';
+            window.location.href = '/src/pages/logIn.html';
         }, 1500);
 
         throw new Error("Session expired");
