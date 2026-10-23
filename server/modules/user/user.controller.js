@@ -1,5 +1,17 @@
 const userSvc= require("./user.service")
 class UserController {
+    async getMembersByClub(req, res){
+        try{
+            const data = await userSvc.getMembersByClub(req);
+            res.json({
+                data: data,
+                message: "Club Members Fetched Successfully",
+                Status: "CLUB_MEMBERS_FETCHED_SUCCESSFULLY"
+            })
+        }catch(exception){
+            throw exception;
+        }
+    }
     async updateUserRole(req, res, next){
         
        try{
@@ -18,6 +30,7 @@ class UserController {
        }
        
       }
+
       async getMyProfile(req, res, next){
         try{
             const data = await userSvc.getMyProfile(req);

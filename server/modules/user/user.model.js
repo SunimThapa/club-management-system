@@ -42,6 +42,16 @@ class UserModel {
         const [result] = await db.execute(query, [user_id])
         return result.affectedRows;
     }
+    async countByClub(club_id){
+        const query = `SELECT COUNT(*) AS total FROM users WHERE club_id = ?`
+        const [rows] = await db.execute(query, [club_id])
+        return rows[0].total;
+    }
+    async findMembersByClub(club_id){
+        const query = `SELECT user_id, name, email FROM users WHERE club_id = ? AND role = 'member'`
+        const [rows] = await db.execute(query, [club_id])
+        return rows;
+    }
 }
 
 const userModel = new UserModel();

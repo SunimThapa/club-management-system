@@ -62,6 +62,15 @@ async getSingleRowByFilter (filter){
     }
 
 }
+async getMembersByClub(req){
+    const { id } = req.params;
+    try{
+        const members = await userModel.findMembersByClub(id);
+        return members;
+    }catch(exception){
+        throw exception;
+    }
+}
  async updateUserByFilter(updateData, filterObject){
     try{
         const result = await userModel.updateUserData("users", updateData, filterObject)
@@ -73,6 +82,7 @@ async getSingleRowByFilter (filter){
  async getMyProfile(req){
     return req.loggedInUser;
 }
+
 
 async updateMyProfile(req){
     const data = req.body;
@@ -144,6 +154,7 @@ async deleteUser(req){
         throw exception;
     }
 }
+
 
 }
 const userSvc = new UserService();

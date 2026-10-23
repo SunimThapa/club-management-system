@@ -1,5 +1,6 @@
 const clubModel = require('./club.model')
 const userSvc = require('./../user/user.service')
+const userModel = require('./../user/user.model')
 
 class ClubService{
     async clubRegister(req){
@@ -38,6 +39,15 @@ class ClubService{
           throw exception;
       }
   }
+  async getClubMemberCount(req){
+    const { id } = req.params;
+    try{
+        const count = await userModel.countByClub(id);
+        return { club_id: id, member_count: count };
+    }catch(exception){
+        throw exception;
+    }
+}
 
   async updateClub(req){
       const { id } = req.params;

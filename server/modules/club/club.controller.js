@@ -41,6 +41,18 @@ async getAllClubs(req, res, next){
             next (exception);
         }
     }
+    async getClubMemberCount(req, res){
+        try{
+            const data = await clubSvc.getClubMemberCount(req);
+            res.json({
+                data: data,
+                message: "Member Count Fetched Successfully",
+                Status: "MEMBER_COUNT_FETCHED_SUCCESSFULLY"
+            })
+        }catch(exception){
+            throw exception;
+        }
+    }
 
     async updateClub(req, res, next){
         try{
