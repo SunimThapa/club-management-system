@@ -1,18 +1,92 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubHub</title>
     <link rel="stylesheet" href="./src/css/style.css">
-  </head>
-  <body>
-    <div id="app">
-      <a href="./src/pages/signUp.html">Create an account</a>
-      <a href="./src/pages/logIn.html">Log-In</a>
-      <a href="./src/pages/clubRegister.html">Create_CLub</a>
-    </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="shield"><img src="images/logo.png" alt="logo" class="logo"></div>
+            <h2>ClubHub</h2>
+        </div>
+
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./src/pages/clubs.html">Clubs</a>
+            <a href="./src/pages/events.html">Events</a>
+            <a href="./src/pages/announcements.html">Announcements</a>
+            <a href="./src/pages/aboutUs.html">About</a>
+        </nav>
+
+        <a href="./src/pages/logIn.html" class="login">Sign In</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tag">YOUR CAMPUS, YOUR COMMUNITY</p>
+            <h1>Welcome to <span>Clubhouse</span></h1>
+            <p class="description">
+                Discover your interests, connect with students,
+                join exciting clubs and make your college life memorable.
+            </p>
+
+            <div class="buttons">
+                <a href="#clubs" class="primary">Explore Clubs</a>
+                <a href="#events" class="secondary">Upcoming Events</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="clubs" id="clubs">
+        <div class="section-heading">
+            <div>
+                <p class="tag">EXPLORE YOUR INTERESTS</p>
+                <h2>Discover Our Clubs</h2>
+            </div>
+        </div>
+
+        <div class="club-container">
+            <div class="club-card">
+                <div class="club-icon">💻</div>
+                <h3>IT Club</h3>
+                <p>Explore technology, coding and innovation with fellow students.</p>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">🎨</div>
+                <h3>Arts & Music Club</h3>
+                <p>Express yourself through art, music and performance.</p>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">🏅</div>
+                <h3>Sports Club</h3>
+                <p>Share your passion for sports and competitions.</p>
+            </div>
+            <div class="club-card">
+              <div class="club-icon">🎭</div>
+              <h3>Social Club</h3>
+              <p>Connect, socialize, and build friendships across campus.</p>
+          </div>
+        </div>
+    </section>
+
+    <section class="events" id="events">
+        <h2>Be Part of Something <span>Exciting</span></h2>
+        <p>Join campus events, meet new people and create unforgettable memories.</p>
+        <a href="./src/pages/signUp.html" class="primary">Create Account</a>
+    </section>
+
+    <footer>
+        <p>© 2026 CH Clubhouse. All rights reserved.</p>
+        <p>Connect. Create. Collaborate.</p>
+    </footer>
+
+</body>
 </html>
